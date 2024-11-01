@@ -1,5 +1,5 @@
 <template>
-  <div class="home">home page</div>
+  <div class="layout-header"></div>
 </template>
 
 <script setup lang="ts">
@@ -7,7 +7,7 @@
 </script>
 
 <style scoped lang="scss">
-.home {
+.layout-header {
 
 }
 </style>

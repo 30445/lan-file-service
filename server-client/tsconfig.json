@@ -3,10 +3,7 @@
     "module": "ESNext",
     "target": "ESNext",
     "sourceMap": true,
-    "allowSyntheticDefaultImports": true
-  },
-  "ts-node": {
-    "esm": true
+    "allowSyntheticDefaultImports": false
   },
   "exclude": [
     "node_modules"
