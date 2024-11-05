@@ -3,60 +3,61 @@
 import zhCN from 'ant-design-vue/es/locale/zh_CN';
 import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
+import {theme} from 'ant-design-vue';
+
 dayjs.locale('zh-cn');
-import { theme, cssinjs } from 'ant-design-vue';
 
-provide("themeToken", theme.useToken().token);
 
-const userTheme = ref({
-  token: {
-    colorPrimary: "#ac9956"
-  }
+
+
+
+
+
+
+/* --------这部分用户将ant design vue的主题色设置到css变量中，方便在css中使用--xxx变量来设置样式，避免在css中直接使用ant design vue的token，因为ant design vue的token是js变量，无法在css中使用。------- */
+const userTheme = ref<{
+  token: {[key: string]: string}
+}>({
+  token: {}
 })
-
-// 全局样式变化后调用这个方法
-const themeChangeEvent = () => {
-  console.log(theme.useToken, "theme.useToken().token.value")
-  let token = JSON.parse(JSON.stringify(theme.useToken().token.value))
+const styleToken = ref<{[key: string]: string}>({})
+const verStyle = (styleObj: {[key: string]: string}) => {
   let style = ":root {"
-
-  for(let key in token) {
-    style += `--${key}: ${token[key]};`
+  for(let key in styleObj) {
+    style += `--${key}: ${styleObj[key]};`
   }
-
   style += "}"
-
   style = style.replace(/\n/g, "")
-  let styleDom = document.getElementById("theme-token")
-
-  console.log(styleDom)
-
-  if (!styleDom) {
-    styleDom = document.createElement("style");
-    styleDom.setAttribute("type", "text/css");
-    styleDom.setAttribute("id", "themeToken");
-    document.head.appendChild(styleDom);
-  }
-
-  styleDom.innerText = style
-  console.log(style)
+  return style
 }
-
-
-
+const initThemeCssVar = () => {
+  let styleDom = document.createElement("style");
+  styleDom.setAttribute("type", "text/css");
+  styleDom.setAttribute("id", "theme-token");
+  // 再次调用theme.useToken()方法会报错，所以只能调用一次，后续用其他方法修改
+  styleToken.value = JSON.parse(JSON.stringify(theme.useToken().token.value))
+  styleDom.innerText = verStyle(styleToken.value)
+  document.head.appendChild(styleDom);
+}
 const changeColor = () => {
   userTheme.value.token = {
-    colorPrimary: "#112233"
+    colorPrimary: "#112233",
+    blue: "#167788"
   }
-  console.log(cssinjs.useStyleInject())
-  nextTick(() => {
-    themeChangeEvent()
-  })
 }
-
 onMounted(() => {
-  themeChangeEvent()
+  if (!document.getElementById("theme-token")) {
+    initThemeCssVar()
+  }
 })
+watch(() => userTheme.value.token, (newVal) => {
+  let newStyleToken = Object.assign({}, styleToken.value, newVal)
+  let styleDom = document.getElementById("theme-token")
+  if (styleDom) {
+    styleDom.innerText = verStyle(newStyleToken)
+  }
+})
+/* ------css颜色变量设置结束---- */
 </script>
 
 <template>
@@ -64,7 +65,7 @@ onMounted(() => {
     <a-config-provider :locale="zhCN" :theme="userTheme">
       <router-view></router-view>
     </a-config-provider>
-    <button @click="changeColor">改变主题色</button>
+    <a-button type="primary" @click="changeColor">改变主题色</a-button>
   </div>
 </template>
 

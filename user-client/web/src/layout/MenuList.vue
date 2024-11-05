@@ -6,7 +6,6 @@
         :key="menu.key"
         :class="[{active: active === menu.key}]"
     >{{menu.title}}</div>
-    {{themeToken.colorPrimary}}
   </div>
 </template>
 
@@ -25,8 +24,6 @@ watch(() => route.path, value => {
   active.value = value
 })
 
-const themeToken = inject("themeToken");
-
 </script>
 
 <style scoped lang="scss">
@@ -34,7 +31,8 @@ const themeToken = inject("themeToken");
   .menu-item {
 
     &.active {
-      //color: ;
+      color: var(--colorPrimary);
+      cursor: pointer;
     }
   }
 }
