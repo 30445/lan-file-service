@@ -16,6 +16,8 @@ import LayoutHeader from "./LayoutHeader.vue";
 
 <style scoped lang="scss">
 .layout {
-
+  .layout-content {
+    padding: 20px;
+  }
 }
 </style>
