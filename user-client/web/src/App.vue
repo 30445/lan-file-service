@@ -39,12 +39,6 @@ const initThemeCssVar = () => {
   styleDom.innerText = verStyle(styleToken.value)
   document.head.appendChild(styleDom);
 }
-const changeColor = () => {
-  userTheme.value.token = {
-    colorPrimary: "#112233",
-    blue: "#167788"
-  }
-}
 onMounted(() => {
   if (!document.getElementById("theme-token")) {
     initThemeCssVar()
@@ -65,7 +59,6 @@ watch(() => userTheme.value.token, (newVal) => {
     <a-config-provider :locale="zhCN" :theme="userTheme">
       <router-view></router-view>
     </a-config-provider>
-    <a-button type="primary" @click="changeColor">改变主题色</a-button>
   </div>
 </template>
 

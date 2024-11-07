@@ -1,7 +1,10 @@
-const router = require("express").Router()
+function createUserRouter({config, express}) {
+  const router = express.Router()
 
-router.get("/", (req, res) => {
-  res.send("Hello World!")
-})
+  router.get("/", (req, res) => {
+    res.send("Hello World! User")
+  })
 
-module.exports = router
+  return router
+}
+module.exports = createUserRouter

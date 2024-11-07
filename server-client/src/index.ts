@@ -1,9 +1,11 @@
 // import Koa from "koa"
 // import config from "config"
+
 const config = require('config');
 const express = require('express');
 
 const user = require('./user');
+const file = require("./file")
 
 // const app = new Koa()
 
@@ -12,7 +14,8 @@ const run = () => {
 
   app.use(express.json())
 
-  app.use("/user", user)
+  app.use("/user", user({express, config}))
+  app.use("/file", file({express, config}))
 
   const port = config.get('port');
 

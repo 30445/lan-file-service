@@ -16,5 +16,8 @@ import MenuList from "./MenuList.vue";
   height: 60px;
   padding: 0 20px;
   box-shadow: 0 5px 10px 0 #efefef;
+  .left-menu {
+    height: 100%;
+  }
 }
 </style>

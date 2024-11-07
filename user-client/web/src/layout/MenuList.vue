@@ -1,7 +1,7 @@
 <template>
-  <div class="menu-list">
+  <div class="menu-list align-center">
     <div
-        class="menu-item"
+        class="menu-item flex-center"
         v-for="menu in menuList"
         :key="menu.key"
         :class="[{active: active === menu.key}]"
@@ -28,8 +28,10 @@ watch(() => route.path, value => {
 
 <style scoped lang="scss">
 .menu-list {
+  height: 100%;
   .menu-item {
-
+    height: 100%;
+    padding: 0 15px;
     &.active {
       color: var(--colorPrimary);
       cursor: pointer;

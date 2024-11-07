@@ -22,6 +22,7 @@ export default defineConfig({
         'vue',
         'vue-router'
       ],
+      dirs: ["src/types", "src/store"],
       dts: 'src/auto-imports.d.ts',
     })
   ],
