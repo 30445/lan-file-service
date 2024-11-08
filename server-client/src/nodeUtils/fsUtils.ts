@@ -1,8 +1,8 @@
 import * as fs from "fs"
 import * as path from "path"
 
-export function readFile(filePath: string) {
-  return fs.readFileSync(filePath)
+export function readFile(filePath: string, config?: any) {
+  return fs.readFileSync(filePath, config)
 }
 
 export function readDir(dirPath: string) {

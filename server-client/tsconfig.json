@@ -20,6 +20,7 @@
     "node_modules"
   ],
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "node-env.d.ts"
   ]
 }
