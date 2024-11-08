@@ -1,21 +1,21 @@
-const fsUtils = require('./../nodeUtils/fs')
+import express from "express"
+const router = express.Router()
 
-function createFileRouter({config, express}) {
-  const router = express.Router()
+router.get("/", (req, res) => {
+  res.send("Hello World! File")
+})
 
-  router.get("/", (req, res) => {
-    res.send("Hello World! File")
-  })
+router.get("/public", (req, res) => {
+  // const path = config.get('directory').root
+  // const files = readDir(path)
+  // let list = []
+  // for (const file of files) {
+    // let sta = fsUtils.statSync(fsUtils.pathJoin(path, file))
+    // console.log(sta)
+  // }
 
-  router.get("/public", (req, res) => {
-    const path = config.get('directory').root
-    const files = fsUtils.readDir(path)
-    console.log(files)
+  res.send([])
+})
 
-    res.send(files)
-  })
 
-  return router
-}
-
-module.exports = createFileRouter
+export default router

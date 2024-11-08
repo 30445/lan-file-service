@@ -2,11 +2,12 @@
   "name": "server-client",
   "version": "1.0.0",
   "scripts": {
-    "dev": "nodemon --exec ts-node src/index.ts",
-    "start": "ts-node src/index.ts",
-    "build": "webpack --mode=development"
+    "build": "rollup -c",
+    "start": "nodemon dist/bundle.js",
+    "dev": "npm-run-all --parallel rollup-dev start",
+    "rollup-dev": "rollup -c --watch"
   },
-  "type": "commonjs",
+  "type": "module",
   "author": "",
   "license": "ISC",
   "description": "",
@@ -15,13 +16,19 @@
     "express": "^4.21.1"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-typescript": "^12.1.1",
     "@types/config": "^3.3.5",
+    "@types/express": "^5.0.0",
     "@types/node": "^22.9.0",
     "nodemon": "^3.1.7",
-    "ts-loader": "^9.5.1",
+    "npm-run-all": "^4.1.5",
+    "rollup": "^4.24.4",
+    "rollup-plugin-alias": "^2.2.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.6.3",
-    "webpack": "^5.95.0",
-    "webpack-cli": "^5.1.4"
+    "tslib": "^2.8.1",
+    "typescript": "^5.6.3"
   }
 }
