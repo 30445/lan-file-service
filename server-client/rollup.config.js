@@ -1,7 +1,7 @@
 import typescript from "@rollup/plugin-typescript";
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import alias from 'rollup-plugin-alias';
+import alias from '@rollup/plugin-alias';
 import json from '@rollup/plugin-json';
 import { fileURLToPath } from 'url';
 import path from 'path';
