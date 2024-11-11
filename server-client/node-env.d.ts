@@ -5,6 +5,9 @@ declare module "express-serve-static-core" {
   interface Request {
     __config: Config
   }
+  interface Response {
+    __isCustomRes: boolean
+  }
 }
 
 export interface Config extends CustomObject {
