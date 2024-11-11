@@ -1,3 +1,8 @@
-declare interface Request extends Express.Request {
-  __config: any
+import express from "express"
+
+declare module "express-serve-static-core" {
+  interface Request {
+    __config: any
+  }
 }
+
