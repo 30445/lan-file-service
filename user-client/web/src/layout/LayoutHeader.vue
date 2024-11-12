@@ -1,9 +1,9 @@
 <template>
-  <div class="layout-header flex align-center">
-    <div class="left-menu">
+  <div class="layout-header flex flex-column justify-between">
+    <div class="top-menu">
       <menu-list></menu-list>
     </div>
-    <div class="right-menu"></div>
+    <div class="bottom-menu"></div>
   </div>
 </template>
 
@@ -13,11 +13,9 @@ import MenuList from "./MenuList.vue";
 
 <style scoped lang="scss">
 .layout-header {
-  height: 60px;
-  padding: 0 20px;
-  box-shadow: 0 5px 10px 0 #efefef;
-  .left-menu {
-    height: 100%;
-  }
+  width: 85px;
+  height: 100vh;
+  padding: 5px;
+  border-right: 1px solid #efefef;
 }
 </style>

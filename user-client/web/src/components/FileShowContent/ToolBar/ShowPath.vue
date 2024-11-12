@@ -1,5 +1,5 @@
 <template>
-  <div class="left-tool">
+  <div class="show-path">
     <a-breadcrumb>
       <a-breadcrumb-item v-for="(item, index) in list" :key="index">{{ item.title }}</a-breadcrumb-item>
     </a-breadcrumb>
@@ -18,7 +18,6 @@ const list = computed(() => {
   })
 
   return routerList
-
 })
 
 
@@ -26,7 +25,8 @@ const list = computed(() => {
 </script>
 
 <style scoped lang="scss">
-.left-tool {
-
+.show-path {
+  margin-bottom: 20px;
+  padding: 5px 0;
 }
 </style>

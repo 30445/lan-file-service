@@ -1,5 +1,5 @@
 <template>
-  <div class="menu-list flex align-center">
+  <div class="menu-list">
     <div
         class="menu-item flex flex-center"
         v-for="menu in menuList"
@@ -30,11 +30,12 @@ watch(() => route.path, value => {
 .menu-list {
   height: 100%;
   .menu-item {
-    height: 100%;
-    padding: 0 15px;
+    padding: 10px 0;
+    height: 40px;
     &.active {
       color: var(--colorPrimary);
       cursor: pointer;
+      background-color: var(--colorPrimaryBg);
     }
   }
 }

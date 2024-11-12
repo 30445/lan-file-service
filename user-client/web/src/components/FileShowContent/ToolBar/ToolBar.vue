@@ -1,18 +1,21 @@
 <template>
-  <div class="tool-bar flex justify-between align-center">
-    <left-tool />
+  <div class="tool-bar">
+    <div class="top-bar"></div>
 
-    <right-tool />
+    <show-path/>
+
+    <tool-row />
   </div>
 </template>
 
 <script setup lang="ts">
-import LeftTool from "./LeftTool.vue";
-import RightTool from "./RightTool.vue";
+import ShowPath from "./ShowPath.vue";
+import ToolRow from "./ToolRow.vue";
+
 </script>
 
 <style scoped lang="scss">
 .tool-bar {
-
+  padding: 10px;
 }
 </style>

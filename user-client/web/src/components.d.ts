@@ -16,10 +16,12 @@ declare module 'vue' {
     FileList: typeof import('./components/FileShowContent/FileList/FileList.vue')['default']
     FileListItem: typeof import('./components/FileShowContent/FileList/FileListItem.vue')['default']
     FileShowContent: typeof import('./components/FileShowContent/FileShowContent.vue')['default']
-    LeftTool: typeof import('./components/FileShowContent/ToolBar/LeftTool.vue')['default']
-    RightTool: typeof import('./components/FileShowContent/ToolBar/RightTool.vue')['default']
+    LeftTool: typeof import('./components/FileShowContent/ToolBar/ShowPath.vue')['default']
+    RightTool: typeof import('./components/FileShowContent/ToolBar/ToolRow.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    ShowPath: typeof import('./components/FileShowContent/ToolBar/ShowPath.vue')['default']
     ToolBar: typeof import('./components/FileShowContent/ToolBar/ToolBar.vue')['default']
+    ToolRow: typeof import('./components/FileShowContent/ToolBar/ToolRow.vue')['default']
   }
 }

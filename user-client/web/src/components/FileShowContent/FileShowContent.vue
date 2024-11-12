@@ -28,8 +28,6 @@ const useShowFileList = showFileListStore()
 const getFileList = async () => {
   const {data} = await execute()
   useShowFileList.setFileList(`${props.base}`, data)
-
-  console.log('file list', useShowFileList.getFileList(`${props.base}`))
 }
 getFileList()
 

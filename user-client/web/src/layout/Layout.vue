@@ -1,5 +1,5 @@
 <template>
-  <div class="layout">
+  <div class="layout flex">
     <layout-header />
 
     <div class="layout-content">
@@ -17,7 +17,7 @@ import LayoutHeader from "./LayoutHeader.vue";
 <style scoped lang="scss">
 .layout {
   .layout-content {
-    padding: 20px;
+    flex: 1 0;
   }
 }
 </style>

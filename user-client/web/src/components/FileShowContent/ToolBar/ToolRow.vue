@@ -1,5 +1,5 @@
 <template>
-  <div class="right-tool">
+  <div class="tool-row">
     <a-button-group>
       <a-tooltip title="下载文件">
         <a-button type="primary">
@@ -26,7 +26,7 @@ import {DownloadOutlined, ShareAltOutlined, UploadOutlined} from "@ant-design/ic
 </script>
 
 <style scoped lang="scss">
-.right-tool {
+.tool-row {
 
 }
 </style>
