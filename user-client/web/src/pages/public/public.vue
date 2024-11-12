@@ -1,8 +1,15 @@
 <template>
-  <div class="home">public page</div>
+  <div class="home">
+    <file-show-content base="/public"/>
+  </div>
 </template>
 
 <script setup lang="ts">
+import FileShowContent from "@/components/FileShowContent/FileShowContent.vue";
+
+
+
+
 
 </script>
 

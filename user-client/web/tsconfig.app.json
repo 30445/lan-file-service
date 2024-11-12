@@ -10,6 +10,7 @@
     /* Bundler mode */
     "moduleResolution": "Bundler",
     "allowImportingTsExtensions": true,
+    "resolvePackageJsonExports": true,
     "isolatedModules": true,
     "moduleDetection": "force",
     "noEmit": true,
@@ -25,7 +26,9 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "rootDirs": ["pinia"]
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
 }

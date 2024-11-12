@@ -7,11 +7,19 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    ABreadcrumb: typeof import('ant-design-vue/es')['Breadcrumb']
+    ABreadcrumbItem: typeof import('ant-design-vue/es')['BreadcrumbItem']
     AButton: typeof import('ant-design-vue/es')['Button']
+    AButtonGroup: typeof import('ant-design-vue/es')['ButtonGroup']
     AConfigProvider: typeof import('ant-design-vue/es')['ConfigProvider']
-    FileList: typeof import('./components/FileList/FileList.vue')['default']
-    FileListItem: typeof import('./components/FileList/FileListItem.vue')['default']
+    ATooltip: typeof import('ant-design-vue/es')['Tooltip']
+    FileList: typeof import('./components/FileShowContent/FileList/FileList.vue')['default']
+    FileListItem: typeof import('./components/FileShowContent/FileList/FileListItem.vue')['default']
+    FileShowContent: typeof import('./components/FileShowContent/FileShowContent.vue')['default']
+    LeftTool: typeof import('./components/FileShowContent/ToolBar/LeftTool.vue')['default']
+    RightTool: typeof import('./components/FileShowContent/ToolBar/RightTool.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    ToolBar: typeof import('./components/FileShowContent/ToolBar/ToolBar.vue')['default']
   }
 }

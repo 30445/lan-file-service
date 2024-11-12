@@ -25,17 +25,18 @@ img {
 }
 
 .justify-center {
-  display: flex;
   justify-content: center;
 }
 
 .align-center {
-  display: flex;
   align-items: center;
 }
 
 .flex-column {
-  display: flex;
   flex-direction: column;
+}
+
+.justify-between {
+  justify-content: space-between;
 }
 

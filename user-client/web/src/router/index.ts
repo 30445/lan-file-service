@@ -11,7 +11,7 @@ const routes: RouteRecordRaw[] = [
         path: "/public",
         component: () => import("@/pages/public/public.vue"),
         meta: {
-          title: "首页"
+          title: "公共空间"
         }
       }
     ]

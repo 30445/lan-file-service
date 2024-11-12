@@ -1,5 +1,5 @@
 <template>
-  <div class="layout-header align-center">
+  <div class="layout-header flex align-center">
     <div class="left-menu">
       <menu-list></menu-list>
     </div>

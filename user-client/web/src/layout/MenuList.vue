@@ -1,7 +1,7 @@
 <template>
-  <div class="menu-list align-center">
+  <div class="menu-list flex align-center">
     <div
-        class="menu-item flex-center"
+        class="menu-item flex flex-center"
         v-for="menu in menuList"
         :key="menu.key"
         :class="[{active: active === menu.key}]"

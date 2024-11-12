@@ -20,10 +20,13 @@ instance.interceptors.request.use(config => {
 }, requestErrorHandler)
 
 instance.interceptors.response.use(response => {
-  return response;
+  if (response.status === 200) {
+    return response.data
+  }
+  return Promise.reject(response)
 }, responseErrorHandler)
 
-function apiGet(url: string, params?: any, config?: {}) {
+export function apiGet(url: string, params?: any, config?: {}) {
   return instance.get(
     url,
     {
@@ -33,11 +36,11 @@ function apiGet(url: string, params?: any, config?: {}) {
   )
 }
 
-function apiPost(url: string, params?: any, config?: {}) {
+export function apiPost(url: string, params?: any, config?: {}) {
   return instance.post(url, params, config)
 }
 
-function useRequest(options: {
+export function useRequest(options: {
   method?: "get" | "post";
   url: string;
   data?: any;
@@ -113,7 +116,7 @@ function useRequest(options: {
         })
       }
 
-      return
+      return response
     } catch (e) {
       error.value = e;
       if (options.error) {
@@ -146,11 +149,4 @@ function useRequest(options: {
     error
   }
 }
-
-export default {
-  apiGet,
-  apiPost,
-  useRequest
-}
-
 

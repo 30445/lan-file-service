@@ -26,9 +26,20 @@ export default defineConfig({
       dts: 'src/auto-imports.d.ts',
     })
   ],
+  server: {
+    host: true,
+    proxy: {
+      '/api': {
+        target: 'http://127.0.0.1:3000',
+        // target: ' http://192.168.110.199:20001',
+        changeOrigin: false,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      },
+    }
+  },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src')
+      '@': path.join(__dirname, './src')
     }
   }
 })
