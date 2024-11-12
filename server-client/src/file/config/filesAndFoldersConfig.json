@@ -1,0 +1,6 @@
+{
+  "dontReadPath": {
+    "description": "不读取的路径",
+    "list": ["System Volume Information", "pagefile.sys", "DumpStack.log.tmp", "swapfile.sys"]
+  }
+}
