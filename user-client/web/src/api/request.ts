@@ -15,6 +15,13 @@ const httpContentType: {[key: string]: string} = {
   json: "application/json"
 }
 
+interface ResponseData {
+  data: any,
+  message: string,
+  status: number,
+  timestamp: Date,
+}
+
 instance.interceptors.request.use(config => {
   return config
 }, requestErrorHandler)
@@ -79,7 +86,7 @@ export function useRequest(options: {
     loading(false);
   }
 
-  async function execute(executeOptions: any) {
+  async function execute(executeOptions?: any): Promise<ResponseData | any> {
     loading(true);
     const options = Object.assign(config, executeOptions);
 

@@ -22,9 +22,9 @@ export function readDirectoryDetail(dirPath: string, baseUrl: string) {
         mtime: null
       }
     }
+    console.log(file)
     list.push({
       name: file.name,
-      path: file.path.replaceAll(baseUrl, ""),
       isDir: file.isDirectory(),
       isFile: file.isFile(),
       size: stats.size,

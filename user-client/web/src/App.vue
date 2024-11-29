@@ -14,7 +14,7 @@ dayjs.locale('zh-cn');
 
 
 
-/* --------这部分用户将ant design vue的主题色设置到css变量中，方便在css中使用--xxx变量来设置样式，避免在css中直接使用ant design vue的token，因为ant design vue的token是js变量，无法在css中使用。------- */
+/* --------这部分用户将ant design vue的主题色设置到css变量中，方便在css中使用var(--xxx)变量来设置样式，避免在css中直接使用ant design vue的token，因为ant design vue的token是js变量，无法在css中使用。------- */
 const userTheme = ref<{
   token: {[key: string]: string}
 }>({

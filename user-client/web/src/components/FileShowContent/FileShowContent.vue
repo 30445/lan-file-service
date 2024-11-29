@@ -3,7 +3,7 @@
     <tool-bar />
 
     <div class="file-content">
-      <file-list :file-list="[]"/>
+      <file-list :file-list="fileList"/>
     </div>
   </div>
 </template>
@@ -23,11 +23,18 @@ const {execute} = useRequest({
   immediate: false
 })
 
+const fileList = ref<FileList>()
+
 const useShowFileList = showFileListStore()
 
 const getFileList = async () => {
-  const {data} = await execute()
-  useShowFileList.setFileList(`${props.base}`, data)
+  try {
+    const {data} = await execute()
+    fileList.value = data
+
+  } catch (e) {
+
+  }
 }
 getFileList()
 
