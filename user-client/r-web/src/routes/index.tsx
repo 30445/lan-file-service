@@ -1,11 +1,15 @@
 import {Route, Routes} from "react-router";
 import {LazyCom} from "../components/LazyCom.tsx";
-import {lazy} from "react";
+import {lazy, LazyExoticComponent} from "react";
+
+const createRoute = (com: LazyExoticComponent<any>) => {
+  return LazyCom({WarpComponent: com, layout: true})
+}
 
 const routes = [
   {
     path: "/",
-    component: LazyCom({WarpComponent: lazy(() => import("@/pages/home/Home"))})
+    element: createRoute(lazy(() => import("@/pages/home/Home")))
   }
 ]
 
@@ -14,7 +18,7 @@ const useRoutes = () => {
     <Routes>
       {
         routes.map(route => {
-          return <Route path={route.path} element={route.component} key={route.path}></Route>
+          return <Route path={route.path} element={route.element} key={route.path}></Route>
         })
       }
     </Routes>
