@@ -10,6 +10,14 @@ const routes = [
   {
     path: "/",
     element: createRoute(lazy(() => import("@/pages/home/Home")))
+  },
+  {
+    path: "/file",
+    element: createRoute(lazy(() => import("@/pages/file/File")))
+  },
+  {
+    path: "/setting",
+    element: createRoute(lazy(() => import("@/pages/setting/Setting")))
   }
 ]
 

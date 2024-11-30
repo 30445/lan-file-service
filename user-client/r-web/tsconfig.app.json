@@ -24,7 +24,8 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "rootDirs": ["./src/types"]
   },
   "include": ["src"]
 }
